@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: ms-copart
+          uri: http://localhost:8083
+          filters:
+            - RewritePath=/copart/(?<segment>.*), /api/v1/${segment}
+          predicates:
+            - Path=/copart/**
+        - id: ms-auth
+          uri: http://localhost:8082
+          filters:
+            - RewritePath=/(?<segment>.*), /api/v1/${segment}
+          predicates:
+            - Path=/auth/**
+        - id: ms-file
+          uri: http://localhost:8085
+          filters:
+            - RewritePath=/(?<segment>.*), /api/v1/${segment}
+          predicates:
+            - Path=/file/**
