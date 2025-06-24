@@ -64,6 +64,12 @@ springdoc:
     enabled: true
     config-url: /v3/api-docs/swagger-config
     urls:
-      -   name: gateway-service
-          url: /v3/api-docs
+      - name: gateway-service
+        url: /v3/api-docs
+      - name: copart-service
+        url: /service-copart
+      - name: auth-service
+        url: /service-auth
+      - name: ms-file
+        url: /service-file
     disable-swagger-default-url: false

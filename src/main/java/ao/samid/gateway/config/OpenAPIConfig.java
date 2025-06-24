@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Configuration;
 @OpenAPIDefinition
 @Configuration
 public class OpenAPIConfig {
-
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
@@ -18,5 +17,4 @@ public class OpenAPIConfig {
                         .description("API Gateway Service responsible for routing requests to various microservices.")
                         .version("1.0.0"));
     }
-
 }
